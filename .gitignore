@@ -7,6 +7,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
+/.idea/
 /inspectionProfiles/
 /libraries/
 /compiler.xml
@@ -17,3 +18,5 @@
 /TDD.iml
 /vcs.xml
 /workspace.xml
+
+/target
