@@ -29,5 +29,7 @@ public class EmployeeRepositoryTest {
     @Test
     public void case02(){
         log.info("case02");
+        Optional<Employee> result = repository.findById(1);
+        assertEquals(result.isPresent() , false);
     }
 }
