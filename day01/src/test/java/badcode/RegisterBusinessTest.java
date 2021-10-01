@@ -46,5 +46,24 @@ public class RegisterBusinessTest {
         });
         assertEquals("Can't save a speaker.", ex6.getMessage());
 
+
+        Exception ex7 = assertThrows( SaveSpeakerException.class, () -> {
+            business.register(new SpeakerRepository() {
+                @Override
+                public Integer saveSpeaker(Speaker speaker) {
+                    throw  new RuntimeException("can't save");
+                }
+            }, speaker);
+        });
+        assertEquals("Can't save a speaker.", ex7.getMessage());
+
+
+        Integer result = business.register(new SpeakerRepository() {
+                @Override
+                public Integer saveSpeaker(Speaker speaker) {
+                   return  10;
+                }
+            }, speaker);
+        assertEquals(10 , result);
     }
 }
