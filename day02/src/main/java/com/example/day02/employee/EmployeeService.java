@@ -11,6 +11,10 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository repository;
 
+    public EmployeeService(EmployeeRepository repository) {
+        this.repository = repository;
+    }
+
     public EmployeeResponse getEmployee(int id) {
         Optional<Employee> employee = repository.findById(id);
         if (employee.isPresent()){
