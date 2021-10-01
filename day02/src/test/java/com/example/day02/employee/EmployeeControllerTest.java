@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Slf4j
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EmployeeControllerTest {
-
+    // start service ทั้งหมด เพื่อ ทดสอบ
     @Autowired
     private TestRestTemplate restTemplate;
 
@@ -22,7 +22,7 @@ public class EmployeeControllerTest {
     public void getById(){
         Integer id = 1;
         EmployeeResponse  response =  restTemplate.getForObject("/employee/" + id, EmployeeResponse.class);
-        log.debug(response.getName());
+        log.info(response.getName());
         assertEquals(id,response.getId());
 
     }

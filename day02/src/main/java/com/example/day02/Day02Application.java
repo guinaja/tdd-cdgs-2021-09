@@ -14,7 +14,7 @@ public class Day02Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext context
                 = SpringApplication.run(Day02Application.class, args);
-       log.debug("initial total beans : {}" , context.getBeanDefinitionCount());
+       log.info("initial total beans : {}" , context.getBeanDefinitionCount());
     }
 
 }
